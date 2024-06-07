@@ -6,7 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { TbPhotoPlus } from "react-icons/tb";
 
-export default function ImageUpload() {
+export default function ImageUpload({ image }: { image: string | undefined }) {
   const [imageUrl, setImageUrl] = useState("");
 
   return (
@@ -47,13 +47,13 @@ export default function ImageUpload() {
             </div>
           </div>
 
-          {imageUrl && (
+          {image && !imageUrl && (
             <div className="space-y-2">
               <label>Imagen Actual:</label>
               <div className="relative w-64 h-64">
                 <Image
                   fill
-                  src={imageUrl}
+                  src={getImagePath(image)}
                   alt="Imagen Producto"
                   style={{ objectFit: "contain" }}
                 />
@@ -61,7 +61,11 @@ export default function ImageUpload() {
             </div>
           )}
 
-          <input type="hidden" name="image" defaultValue={imageUrl} />
+          <input
+            type="hidden"
+            name="image"
+            defaultValue={imageUrl ? imageUrl : image}
+          />
         </>
       )}
     </CldUploadWidget>
