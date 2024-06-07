@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Quiosco App
 
-## Getting Started
+Aplicación hecha con **React**, **TypeScript** y **Next.js** para la gestión de órdenes en un quiosco de comida. La aplicación cuenta con dos interfaces principales: una para los clientes y otra para los administradores.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Interfaz Cliente
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Visualizar las **categorías de productos** disponibles en el quiosco.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Lista de los **productos disponibles** en una categoría seleccionada.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Los clientes pueden **agregar, ver y editar productos en su carrito de compras** (Pedido).
 
-## Learn More
+- Realizar pedido de comida al quiosco.
 
-To learn more about Next.js, take a look at the following resources:
+### Interfaz Administrador
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Visualización de Órdenes Activas:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+  - Muestra las órdenes activas con todos los detalles del pedido.
 
-## Deploy on Vercel
+- **Finalización de Órdenes:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+  - Marcar una orden como finalizada para moverla a la lista de órdenes terminadas.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Gestión de Productos:**
+
+  - El administrador puede crear y actualizar productos, incluyendo su nombre, precio, categoría e imagen.
+
+- **Búsqueda de Productos por Nombre:**
+  - Realizar búsquedas de productos por su nombre para encontrarlos rápidamente.
+
+## MVP
+
+La primera versión del producto se enfoca en entregar un MVP (Producto Mínimo Viable) que incluye todas las funcionalidades mencionadas arriba.
+
+## Versiones
+
+Las versiones del proyecto se encuentran en la sección de [releases](https://github.com/Reh4m/quiosco-app/releases) y detallan cada una de las funcionalidades implementadas en cada versión.
+
+## Tecnologías y Herramientas Usadas
+
+- **React:** Biblioteca de JavaScript para construir la interface de usuario.
+- **Next.js:** Framework de React para el renderizado del lado del servidor.
+- **TypeScript:** Añade tipos estáticos para mejorar el desarrollo.
+- **Zod:** Biblioteca para la validación de datos.
+- **Zustand:** Biblioteca de gestión de estado para React.
+- **PostgreSQL:** Base de datos utilizada en el proyecto.
+- **Vercel:** Plataforma de despliegue.
+- **Render:** Plataforma para el despliegue de la base de datos PostgreSQL.
+
+## Autor
+
+- **Emmanuel Ruiz Pérez** - Ing. en Sistemas Computacionales - [Reh4m](https://github.com/Reh4m)
