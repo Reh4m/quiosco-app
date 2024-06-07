@@ -1,6 +1,7 @@
 "use server";
 
 import { OrderSchema } from "@/src/schema";
+import { prisma } from "@/src/prisma";
 
 export async function createOrder(data: unknown) {
   const result = OrderSchema.safeParse(data);
@@ -12,6 +13,18 @@ export async function createOrder(data: unknown) {
   }
 
   try {
+    await prisma.order.create({
+      data: {
+        name: result.data.name,
+        total: result.data.total,
+        orderProducts: {
+          create: result.data.order.map((product) => ({
+            productId: product.id,
+            quantity: product.quantity,
+          })),
+        },
+      },
+    });
   } catch (error) {
     console.error();
   }
