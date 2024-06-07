@@ -23,3 +23,7 @@ export const OrderIdSchema = z.object({
       message: "El id de la orden es requerido",
     }),
 });
+
+export const SearchSchema = z.object({
+  search: z.string().trim().min(1, { message: "La búsqueda es requerida" }),
+});
