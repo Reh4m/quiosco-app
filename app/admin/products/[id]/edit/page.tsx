@@ -1,6 +1,8 @@
 import Heading from "@/components/ui/Heading";
 import { prisma } from "@/src/prisma";
 import notFound from "./not-found";
+import EditProductForm from "@/components/products/EditProductForm";
+import ProductForm from "@/components/products/ProductForm";
 
 async function getProductById(id: number) {
   const product = await prisma.product.findUnique({
@@ -25,13 +27,13 @@ export default async function EditProductsPage({
 
   return (
     <>
-      <Heading>Editar Producto: {product.name}</Heading>
+      <Heading>Editar Producto: {product?.name}</Heading>
 
-      {/* <GoBackButton />
+      {/* <GoBackButton /> */}
 
       <EditProductForm>
         <ProductForm product={product} />
-      </EditProductForm> */}
+      </EditProductForm>
     </>
   );
 }
