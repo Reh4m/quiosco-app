@@ -13,7 +13,7 @@ export default function OrderSummary() {
     [order]
   );
 
-  const handleCreateOrder = () => {
+  const handleCreateOrder = (formDate: FormData) => {
     createOrder();
   };
 
@@ -35,6 +35,13 @@ export default function OrderSummary() {
           </p>
 
           <form className="w-full mt-10 space-y-5" action={handleCreateOrder}>
+            <input
+              type="text"
+              placeholder="Tu nombre"
+              className="bg-white border border-gray-100 p-2 w-full"
+              name="name"
+            />
+
             <input
               type="submit"
               className="py-2 rounded uppercase text-white bg-black w-full text-center cursor-pointer"
