@@ -2,8 +2,12 @@ import ProductTable from "@/components/products/ProductsTable";
 import Heading from "@/components/ui/Heading";
 import { prisma } from "@/src/prisma";
 
-async function getProducts() {
+async function getProducts(page: number, pageSize: number) {
+  const skip = (page - 1) * pageSize;
+
   const products = await prisma.product.findMany({
+    take: pageSize,
+    skip: skip,
     include: {
       category: true,
     },
@@ -14,8 +18,15 @@ async function getProducts() {
 
 export type ProductsWithCategory = Awaited<ReturnType<typeof getProducts>>;
 
-export default async function ProductsPage() {
-  const products = await getProducts();
+export default async function ProductsPage({
+  searchParams,
+}: {
+  searchParams: { page: string };
+}) {
+  const page = +searchParams.page || 1;
+  const pageSize = 10;
+
+  const products = await getProducts(page, pageSize);
 
   return (
     <>
