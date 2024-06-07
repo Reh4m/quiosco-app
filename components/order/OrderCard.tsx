@@ -1,4 +1,4 @@
-import { coompleteOrder } from "@/actions/complete-order-action";
+import { completeOrder } from "@/actions/complete-order-action";
 import { OrderWithProducts } from "@/src/types";
 import { formatCurrency } from "@/src/utils";
 
@@ -42,7 +42,7 @@ export default function OrderCard({ order }: OrderCardProps) {
         </div>
       </dl>
 
-      <form action={coompleteOrder}>
+      <form action={completeOrder}>
         <input type="hidden" name="order_id" value={order.id} />
         <input
           type="submit"

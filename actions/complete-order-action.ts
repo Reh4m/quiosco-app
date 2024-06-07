@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { prisma } from "@/src/prisma";
 import { OrderIdSchema } from "@/src/schema";
 
-export async function coompleteOrder(formData: FormData) {
+export async function completeOrder(formData: FormData) {
   const data = {
     orderId: formData.get("order_id"),
   };
