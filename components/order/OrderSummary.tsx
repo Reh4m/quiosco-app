@@ -52,7 +52,7 @@ export default function OrderSummary() {
       <h1 className="text-4xl my-10 text-center font-black">Mi pedido</h1>
 
       {order.length === 0 ? (
-        <p className="text-center my-10">El peidido está vacío</p>
+        <p className="text-center my-10">El pedido está vacío</p>
       ) : (
         <div>
           {order.map((item) => (
