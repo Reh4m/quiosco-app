@@ -22,7 +22,7 @@ export default function CategoryIcon({ category }: CategoryIconProps) {
         <Image src={`/icon_${category.slug}.svg`} alt={category.name} fill />
       </div>
 
-      <Link className="text-xl font-bold" href={`/order/${category.slug}`}>
+      <Link className="text-xl font-semibold" href={`/order/${category.slug}`}>
         {category.name}
       </Link>
     </div>
